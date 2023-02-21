@@ -110,10 +110,12 @@ module.exports.createSession = function(req, res){
     return res.redirect('/');
 }
 
-module.exports.destroySession = function(req, res){
-    //req.logout();
+module.exports.destroySession = function(req, res, next){
+    req.logout(function(err){
+        if(err){
+            return next(err);
+        }
+        res.redirect('/');
+    });
     req.flash('success', 'You have logged out!');
-
-
-    return res.redirect('/');
 }

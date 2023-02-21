@@ -9,18 +9,10 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const passportJWT = require('./config/passport-jwt-strategy');
-const passportGoogle = require('./config/passport-google-oauth-strategy');
 const MongoStore = require('connect-mongo');
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
-
-
-// setup the chat server to be used with socket.io
-const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
-chatServer.listen(5000);
-console.log('chat server is listening on port 5000');
 
 
 app.use(sassMiddleware({
@@ -62,7 +54,7 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl: 'mongodb://localhost/codeial_development',
+            mongoUrl: 'mongodb+srv://Gummadavally:Mani24@projectcluster.tx9gp0v.mongodb.net/augment?retryWrites=true&w=majority',
             autoRemove: 'disabled'
         
         },
