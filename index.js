@@ -54,7 +54,8 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl: 'mongodb+srv://Gummadavally:Mani24@projectcluster.tx9gp0v.mongodb.net/augment?retryWrites=true&w=majority',
+            //mongoUrl: 'mongodb+srv://Gummadavally:Mani24@projectcluster.tx9gp0v.mongodb.net/augment?retryWrites=true&w=majority',
+            mongoUrl: 'mongodb://localhost/codeial_development',
             autoRemove: 'disabled'
         
         },
